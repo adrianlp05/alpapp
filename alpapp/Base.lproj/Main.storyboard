@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,79 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="alpapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D9g-19-PWZ">
+                                <rect key="frame" x="235" y="818" width="96" height="44"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="24"/>
+                                <state key="normal" title="AdrianLP">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="S8l-lo-B0L"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by:" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7x-VA-0DG">
+                                <rect key="frame" x="132.5" y="830" width="89" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fCM-Zs-NEk">
+                                <rect key="frame" x="0.0" y="44" width="414" height="758"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="igG-Jz-F7w">
+                                <rect key="frame" x="34" y="826" width="22" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <state key="normal" image="xmark" catalog="system">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
+                                </state>
+                                <connections>
+                                    <action selector="Exitapp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9iO-ws-3io"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="igG-Jz-F7w" firstAttribute="top" secondItem="fCM-Zs-NEk" secondAttribute="bottom" constant="24" id="C6n-5S-V0m"/>
+                            <constraint firstItem="D9g-19-PWZ" firstAttribute="leading" secondItem="Z7x-VA-0DG" secondAttribute="trailing" constant="13.5" id="ISd-nK-HcK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Z7x-VA-0DG" secondAttribute="bottom" constant="11" id="JdJ-m7-Bc8"/>
+                            <constraint firstItem="Z7x-VA-0DG" firstAttribute="top" secondItem="fCM-Zs-NEk" secondAttribute="bottom" constant="28" id="PPr-Sg-YcB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="D9g-19-PWZ" secondAttribute="trailing" constant="83" id="PgE-KB-gD1"/>
+                            <constraint firstItem="Z7x-VA-0DG" firstAttribute="leading" secondItem="igG-Jz-F7w" secondAttribute="trailing" constant="76.5" id="SlW-zk-RAS"/>
+                            <constraint firstItem="igG-Jz-F7w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="34" id="V4Y-OO-lHw"/>
+                            <constraint firstItem="D9g-19-PWZ" firstAttribute="leading" secondItem="Z7x-VA-0DG" secondAttribute="trailing" constant="13.5" id="a4L-fk-RdM"/>
+                            <constraint firstItem="D9g-19-PWZ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ceI-ah-o8Z"/>
+                            <constraint firstItem="Z7x-VA-0DG" firstAttribute="leading" secondItem="igG-Jz-F7w" secondAttribute="trailing" constant="76.5" id="fgd-dK-2Bs"/>
+                            <constraint firstItem="D9g-19-PWZ" firstAttribute="top" secondItem="fCM-Zs-NEk" secondAttribute="bottom" constant="16" id="mgX-nR-DTi"/>
+                            <constraint firstItem="fCM-Zs-NEk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="mxB-6J-Wtx"/>
+                            <constraint firstItem="fCM-Zs-NEk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pVw-ig-Mtp"/>
+                            <constraint firstItem="D9g-19-PWZ" firstAttribute="top" secondItem="fCM-Zs-NEk" secondAttribute="bottom" constant="16" id="vny-vQ-xak"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="igG-Jz-F7w" secondAttribute="bottom" constant="7" id="yPW-T4-dS1"/>
+                            <constraint firstItem="fCM-Zs-NEk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="zh2-7L-39T"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="webview" destination="fCM-Zs-NEk" id="IsU-Ap-rtv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+    </resources>
 </document>
